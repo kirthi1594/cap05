@@ -1,0 +1,68 @@
+<!-- // Mini Calculator
+
+// When user enter 2 and 4 and clicks on multiply button, an alert should come with 8 as ans
+// When user enter 8 and 4 and clicks on Divide button,an alert should come with 2 as ans --> 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input id="n1" type="number">
+    <input id="n2" type="number">
+
+<div> 
+    <button id="add" onclick="add()">Addition</button>
+    <button id="sub" onclick="subtract()">Subtraction</button>
+    <button id="mul" onclick="multiply()">Multiply</button>
+    <button id="divi" onclick="divide()">Division</button>
+</div>
+</body>
+</html>
+<script>
+//let num1 = document.getElementById("n1").value
+//let num2 = document.getElementById("n2").value
+let btnAdd = document.getElementById("add")
+let sub = document.getElementById("sub")
+let multi = document.getElementById("mul")
+let divi = document.getElementById("divi")
+
+function add(){
+let num1 = document.getElementById("n1").value
+let num2 = document.getElementById("n2").value
+    
+alert(Number(num1) + Number(num2))
+    console.log(Number(num1) + Number(num2))
+}
+
+function subtract(){
+let num1 = document.getElementById("n1").value
+let num2 = document.getElementById("n2").value
+    
+alert(Number(num1) - Number(num2))
+    console.log(Number(num1) - Number(num2))
+}
+
+function multiply(){
+let num1 = document.getElementById("n1").value
+let num2 = document.getElementById("n2").value
+    
+alert(Number(num1) * Number(num2))
+    console.log(Number(num1) * Number(num2))
+}
+
+function divide(){
+let num1 = document.getElementById("n1").value
+let num2 = document.getElementById("n2").value
+    
+alert(Number(num1) / Number(num2))
+    console.log(Number(num1) / Number(num2))
+}
+
+
+</script>
+

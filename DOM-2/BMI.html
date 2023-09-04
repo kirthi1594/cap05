@@ -10,26 +10,33 @@
             flex-direction: column;
             width: 50%;
             margin: auto;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
         }
         label{
             margin-bottom: 10px;
+            padding: 10px;
         }
         input{
             padding: 10px;
             font: 20px;
         }
+        button{
+            width: 30%;
+        }
     </style>
 </head>
 <body>
     <div>
-        <h1>Calculate BMI</h1>
-        <Label for="weight">Enter you weight in KGs</Label>
+        <h1>Check Your BMI</h1>
+        <p>Enter your weight and height below to check your BMI results</p>
+        <Label for="weight">Put your weight in here (KG)</Label>
         <input type="number" name="weight" id="weight" placeholder="Enter you Weight">
         
         
-        <Label for="height">Enter you height in cms</Label>
+        <Label for="height">And your height in here (CM)</Label>
         <input type="number" name="height" id="height" placeholder="Enter you height">
-        <button id="btn" onclick="bmi_fun()">calculate BMI</button>
+        <button id="btn" onclick="bmi_fun()">Calculate BMI</button>
         <h1 id="result"></h1>
 
     </div>
@@ -53,12 +60,12 @@
        else if(BMI_cal>=25 && BMI_cal<=29.9){
          state = "Over Weight"
        }
-       else (BMI_cal>=30){
+       else(BMI_cal>=30)
          state = "Obese"
-       }
+       
 
-       console.log(`Your BMI is ${BMI_cal}which means You are ${state}`)
-
+      { console.log(`Your BMI is ${BMI_cal} which means You are ${state}`)
+    }
 
        
        
@@ -67,6 +74,8 @@
 
     
     }
+
+
 
 
 </script>

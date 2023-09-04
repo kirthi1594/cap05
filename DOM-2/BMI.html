@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <style>
+        div{
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            margin: auto;
+        }
+        label{
+            margin-bottom: 10px;
+        }
+        input{
+            padding: 10px;
+            font: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Calculate BMI</h1>
+        <Label for="weight">Enter you weight in KGs</Label>
+        <input type="number" name="weight" id="weight" placeholder="Enter you Weight">
+        
+        
+        <Label for="height">Enter you height in cms</Label>
+        <input type="number" name="height" id="height" placeholder="Enter you height">
+        <button id="btn" onclick="bmi_fun()">calculate BMI</button>
+        <h1 id="result"></h1>
+
+    </div>
+</body>
+</html>
+<script>
+    let btn = document.getElementById("btn")
+    function bmi_fun(){
+        let weight = document.getElementById("weight").value
+        let height = document.getElementById("height").value
+        //console.log(typeof +weight,typeof +height)
+
+        let BMI_cal = Number(weight)/((Number(height)*Number(height))/10000)
+        let state =""
+        if(BMI_cal<=18.4){
+         state = "UnderWeight"
+       }
+       else if(BMI_cal>=18.5 && BMI_cal<=24.9){
+         state = "Normal Weight"
+       }
+       else if(BMI_cal>=25 && BMI_cal<=29.9){
+         state = "Over Weight"
+       }
+       else (BMI_cal>=30){
+         state = "Obese"
+       }
+
+       console.log(`Your BMI is ${BMI_cal}which means You are ${state}`)
+
+
+       
+       
+        document.getElementById("result").innerText=`Your BMI is ${BMI_cal}which means You are ${state}`
+    //console.log(typeof +weight,typeof +height,BMI_cal)
+
+    
+    }
+
+
+</script>

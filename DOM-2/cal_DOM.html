@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        .calculator{
+            border: 1px solid;
+            width: 50%;
+            margin: auto;
+            border-radius: 5px;
+            padding: 10px;
+        }
+        #display{
+            height: 50px;
+            border: 1px solid;
+        }
+        #keypad{
+            height: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+
+        }
+        button{
+            height: 50px;
+            /* width: 50px; */
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <div id="display">
+            <!-- display btn innerText here -->
+        </div>
+        <div id="keypad">
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>+</button>
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button>-</button>
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button>*</button>
+            <button id="clear">C</button>
+            <button>0</button>
+            <button>/</button>
+            <button id="equal">=</button>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    let btnArray = document.querySelectorAll("button");
+    //let output = document.getElementById("display").innerText
+function num(event){
+    console.log(event.target.innerText) // event object
+    document.getElementById("display").innerText += event.target.innerText
+
+}
+// btn.addEventListener('click',num)
+// document.getElementById('equal')
+for(let i=0; i<btnArray.length-1; i++) {
+    btnArray[i].addEventListener('click', num);
+}
+
+function clear(){
+   
+   document.getElementById("display").innerText = ""
+}
+let cFun = document.getElementById("clear")
+cFun.addEventListener('click',clear)
+
+let equal = document.getElementById('equal')
+equal.addEventListener('click', result);
+
+function result(){
+    let expression = document.getElementById('display').innerText
+    // console.log(expression) //12+3
+    let evaluatedValue = eval(expression); //expression
+    // console.log(evaluatedValue);
+    document.getElementById('display').innerText = evaluatedValue;
+
+}
+</script>

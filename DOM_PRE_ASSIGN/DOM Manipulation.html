@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+</head>
+<body>
+    <input type="text" id="myInput"/>
+    <button id="myButton" onclick="btnFun()">Submit</button>
+    <h1 id="heading">value</h1>
+</body>
+<script>
+    let btn = document.getElementById("myButton")
+    let msg = document.getElementById("heading")
+    let inp1= document.getElementById("myInput").value
+    function btnFun(){
+        alert (document.getElementById("myInput").value)
+         msg.innerText ="Entered value: "+ document.getElementById("myInput").value
+    
+    }
+</script>
+</html>

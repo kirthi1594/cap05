@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online book store</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  function Author(name, birthYear, nationality) {
+    this.name = name;
+    this.birthYear = birthYear;
+    this.nationality = nationality;
+  }
+
+  let author1 = new Author('Bharathiyar', '1882', 'TamilNadu')
+  console.log(author1);
+
+  function Book(authorName, authorBirthYear, authorNationality, title, genre, price, author) {
+    this.title = title;
+    // this.author = new Author(authorName, authorBirthYear, authorNationality);
+    // this.author = Object.create(new Author(authorName, authorBirthYear, authorNationality))
+    this.author = {name: 'Bharathiyar'}
+    // this.author = Author.call(this, authorName, authorBirthYear, authorNationality)
+    this.genre = genre;
+    this.price = price;
+    this.getBookInfo = function() {
+        console.log(title, author, genre, price);
+    }
+  }
+
+  let Geetai= new Book('Bharathiyar', '1882', 'TamilNadu', 'Geetai', 'Fiction', 999);
+  console.log(Geetai)
+
+
+
+</script>

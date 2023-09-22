@@ -1,0 +1,33 @@
+.container{
+    border: 1px solid;
+    height: 500px;
+    width: 60%;
+    margin: auto;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+form input{
+    margin: 10px 0;
+    padding: 10px;
+}
+.box{
+    height: 50vh;
+    width: 60%;
+    margin: auto;
+}
+#succesfull{
+    display: none;
+    border: 1px solid;
+}
+#failed{
+    display: none;
+    border: 1px solid;
+}
+#pending{
+    display: none;
+    border: 1px solid;
+}

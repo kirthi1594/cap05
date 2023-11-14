@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Array</title>
+</head>
+<body>
+    <h1>Custom Array</h1>
+</body>
+</html>
+<script>
+    function CustomArray() {
+  // Use arguments.length to determine the size of the array
+  this.size = arguments.length;
+
+  // Add key-value pairs to the array object
+  for (let i = 0; i < arguments.length; i++) {
+    this[i] = arguments[i];
+  }
+}
+
+CustomArray.prototype = {
+  // Method to add an element at the end
+  push: function (element) {
+    this[this.size] = element;
+    this.size++;
+  },
+
+  // Method to remove an element from the end
+  pop: function () {
+    if (this.size > 0) {
+      delete this[this.size - 1];
+      this.size--;
+    }
+  },
+
+  // Method to return the element at the last index
+  top: function () {
+    return this[this.size - 1];
+  },
+
+  // Method to print elements in a single line
+  print: function () {
+    const elements = [];
+    for (let i = 0; i < this.size; i++) {
+      elements.push(this[i]);
+    }
+    console.log(`[${elements.join(',')}]`);
+  },
+
+  // Method to print elements in a single line in reverse order
+  printReverse: function () {
+    const elements = [];
+    for (let i = this.size - 1; i >= 0; i--) {
+      elements.push(this[i]);
+    }
+    console.log(`[${elements.join(',')}]`);
+  }
+};
+
+// Example usage:
+const myStack = new CustomArray(1, 2, 3, 4);
+myStack.print();        // Output: [1,2,3,4]
+myStack.push(5);
+myStack.print();        // Output: [1,2,3,4,5]
+myStack.pop();
+myStack.print();        // Output: [1,2,3,4]
+console.log(myStack.top());  // Output: 4
+myStack.printReverse(); // Output: [4,3,2,1]
+console.log(myStack.size);   // Output: 4
+
+</script>

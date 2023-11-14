@@ -1,0 +1,72 @@
+*{
+    box-sizing: border-box;
+  }
+  div{
+    display: flex;
+  }
+  
+  table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 60%;
+    margin: auto;
+    margin-top: 50px;
+    text-align: center;
+  }
+  
+  table td,
+  table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  tr:nth-child(even),
+  th {
+      background-color: #5e00b8;
+      color: #fff;
+    }
+    
+  h1{
+    text-align: center;
+    font-family: sans-serif;
+    color: #1f91cf;
+    margin: 20px;
+  }
+  
+  div {
+    display: flex;
+    gap: 20px;
+    width: 95%;
+    margin: auto;
+  }
+  
+  form {
+    border: 1px solid;
+    width: 33%;
+    margin-bottom: 20px;
+    padding: 10px;
+  }
+  
+  input,
+  select {
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  input[type='submit'] {
+    background-color: #5e00b8 ;
+    border-radius: 10px;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+  }
+  
+  input[type='submit']:hover {
+    background: #50019b;
+  }
+  
+  label {
+  font-size: 20px;
+  }

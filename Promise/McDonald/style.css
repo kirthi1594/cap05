@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  .foodContainer {
+    /* border: 1px solid; */
+    width: 80%;
+    padding: 10px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    /* display: none; */
+  }
+  .card {
+    /* border: 1px solid; */
+    padding: 10px;
+    text-align: center;
+  }
+  .card img {
+    /* border: 1px solid; */
+    width: 100%;
+  }
+  .card button {
+    padding: 10px;
+    margin-top: 10px;
+    font-weight: bold;
+    border: none;
+    background-color: #ffbc0d;
+  }
+
+  /* Order Container */
+  .orderContainer {
+    border: 1px solid;
+    width: 350px;
+    padding: 10px;
+    margin: auto;
+    margin-top: 100px;
+
+    animation: zoomOut 0.3s;
+    display: none;
+  }
+  .orderContainer img {
+    width: 100%;
+    /* border: 1px solid; */
+  }
+  .orderContainer p {
+    font-size: 20px;
+    color: teal;
+  }
+  .orderContainer P:first-child {
+    font-size: 13px;
+    color: #000;
+    float: right;
+  }
+
+  @keyframes zoomOut {
+    from {
+      scale: 0;
+    }
+    to {
+      scale: 1;
+    }
+  }

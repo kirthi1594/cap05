@@ -1,0 +1,15 @@
+body{
+    width: 60%;
+    margin: auto;
+}
+form{
+    border: 1px solid;
+    padding: 10px;
+    margin-bottom: 50px;
+}
+form input{
+    padding: 10px;
+}
+#display{
+    border: 1px solid;
+}

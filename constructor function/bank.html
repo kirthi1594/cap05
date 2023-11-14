@@ -1,13 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BANK ACCOUNT MANAGEMENT</title>
+  </head>
+  <body></body>
 </html>
-<script>console.log("sanya")
+
+<script>
+  function BankAccount(accountNumber, name, type, balance) {
+    this.name = name;
+    this.accountNumber = accountNumber;
+    this.type = type;
+    this.balance = 0;
+  }
+
+  BankAccount.prototype.deposite = function (amt) {
+    this.balance += amt;
+  };
+
+  BankAccount.prototype.withdraw = function (amt) {
+    if(this.balance>=amt) {
+      this.balance -= amt;
+    } else {
+      console.log('Not enough balance')
+    }
+  };
+
+  BankAccount.prototype.checkBalance = function () {
+    console.log(this.balance);
+  };
+
+  BankAccount.prototype.isActive = function () {
+    return this.isActive;
+  };
+
+  BankAccount.prototype.getTotalBalance = function () {
+    
+  };
+
+  let acc1 = new BankAccount("Amit", 1234, "Saving", 1000);
+  let acc2 = new BankAccount("Sumit", 1234, "Saving", 2000);
+
+  console.log(acc1.type);
+  acc1.deposite(1000);
+  acc1.checkBalance();
+  acc1.withdraw(234);
+  acc1.checkBalance();
 </script>

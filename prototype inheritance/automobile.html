@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Automobile Inheritance Model</title>
+  </head>
+  <body>
+    <h1>AUTOMOBILE INHERITANCE MODEL</h1>
+  </body>
+</html>
+<script>
+  // Define a base constructor function for the Automobile.
+  function Automobile(make, model, year) {
+    this.make = make;
+    this.model = model;
+    this.year = year;
+  }
+
+  Automobile.prototype.start = function () {
+    console.log(`Starting the ${this.make} ${this.model}`);
+  };
+
+  // Defining a constructor function for the FourWheeler that inherits from the Automobile using prototype-based inheritance.
+  function FourWheeler(color, make, model, year) {
+    // Call the base constructor
+    Automobile.call(this, make, model, year);
+    this.color = color;
+  }
+
+  FourWheeler.prototype.drive = function () {
+    console.log(`Driving the ${this.color} ${this.make} ${this.model}`);
+  };
+
+  //   Using Object.create() to set up the prototype chain
+  let obj = { name: "Amit" };
+  obj = Object.create(Automobile.prototype);
+  FourWheeler.prototype = obj;
+
+  let myCar = new FourWheeler("blue", "Tata", "Nano", 2023);
+  console.log(myCar);
+  // console.log(myCar.__proto__);
+  // console.log(myCar.__proto__.constructor);
+  // console.log(myCar.__proto__.__proto__);
+  //   myCar.drive();
+
+  //   console.log(obj.__proto__);
+  //   console.log(FourWheeler.prototype.constructor);
+</script>

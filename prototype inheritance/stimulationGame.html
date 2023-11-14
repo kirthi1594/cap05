@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Simulation Game</h1>
+  </body>
+</html>
+<script>
+
+  //====== Vahicle Constructor Function =====
+  function Vahicle(brand, model, speed, fuelType) {
+    this.brand = brand;
+    this.model = model;
+    this.speed = speed;
+    this.fuelType = fuelType;
+  }
+
+  // Vahicle.prototype methods
+  Vahicle.prototype.accelerate = function (increase) {
+    this.speed += increase;
+  };
+  Vahicle.prototype.break = function (decrease) {
+    this.speed -= decrease;
+  };
+  Vahicle.prototype.refuel = function () {
+    console.log("vehicle is refueling");
+  };
+
+  // Create a new vahicle object (instance) using the Vahicle constructor function.
+  let vahicle = new Vahicle("brand1", "model1", 220, "Disel");
+
+  // Trying to access the properties and prototype methods
+
+  //====== Car Constructor Function =====
+  function Car(noOfWheels, brand, model, speed, fuelType) {
+    this.noOfWheels = noOfWheels;
+    Vahicle.call(this, brand, model, speed, fuelType); //
+  }
+  
+  Car.prototype = Object.create(Vahicle.prototype); // to access the Vahicle.prototype properties by any Car object
+  
+  // Car.prototype methods
+  Car.prototype.honk = function () {
+    `${this.model}honking...`;
+  };
+
+// Create a new car object (instance) using the Car constructor function.
+  let car2 = new Car(4, "brand1", "model1", 220, "Disel");
+  console.log('car2', car2);
+
+  //====== Airplane Constructor Function =====
+  function Airplane(numberOfEngines, hasLandingGear, brand, model, speed, fuelType) {
+    this.numberOfEngines = numberOfEngines;
+    this.hasLandingGear = hasLandingGear;
+    Vahicle.call(this, brand, model, speed, fuelType);
+  }
+
+  Airplane.prototype.takeOff = function () {
+    console.log("Airplane is taking off");
+  };
+
+  Airplane.prototype = Object.create(Vahicle.prototype);
+
+  let ap1 = new Airplane(8, true, "brand1", "model1", 220, "Disel");
+  console.log(ap1);
+
+</script>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counter Class</title>
+  </head>
+  <body>
+    <h1>Counter Class</h1>
+    <h3 id="display">0</h3>
+
+    <div class="btns">
+      <button id="start">Start</button>
+      <button id="inc">Increment</button>
+      <button id="dec">Decrement</button>
+    </div>
+  </body>
+</html>
+<script>
+  let display = document.getElementById("display");
+
+  let start = document.getElementById("start");
+  let inc = document.getElementById("inc");
+  let dec = document.getElementById("dec");
+
+  let counter = 0,
+    timerId,
+    isPaused = true;
+
+  function startCounter() {
+    if (isPaused) {
+      timerId = setInterval(() => {
+        counter++;
+        display.innerHTML = counter;
+        console.log(counter);
+      }, 100);
+      isPaused = !isPaused;
+      console.log("timer started", counter);
+      start.innerHTML = "Stop";
+    } else {
+      clearInterval(timerId);
+      isPaused = !isPaused;
+      console.log("timer paused", counter);
+      display.innerHTML = counter;
+      start.innerHTML = "Start";
+    }
+  }
+
+  function manual(sign) {
+    clearInterval(timerId);
+    sign ? counter++ : counter--;
+    display.innerHTML = counter;
+  }
+
+  start.addEventListener("click", startCounter);
+  inc.addEventListener("click", () => manual(true));
+  dec.addEventListener("click", () => manual(false));
+</script>

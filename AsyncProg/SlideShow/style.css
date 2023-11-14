@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.body{
+    border: 1px solid;
+    width: 70%;
+    text-align: center;
+    margin: auto;
+    padding: 5px;
+}
+.slideShowDiv{
+    border: 1px solid;
+    padding: 5px;
+
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: center; */
+}
+.display{
+    border: 1px solid;
+    background-color: #363333;
+    padding: 5px;
+    position: relative;
+}
+.display img{
+    width: 60%;
+}
+.arrow{
+    font-size: 30px;
+    border: 1px solid transparent;
+    padding: 3px;
+    border-radius: 50%;
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+
+    position: absolute;
+    top: 50%;
+    /* left: 50%; */
+    left: 40px;
+    transform: translate(-50%, -50%);
+}
+.rightArr{
+    right: 0;
+    left: auto;
+}
+.arrow:hover{
+    border: 1px solid #f3f3f3;
+    color: #fff;
+}
+
+/* Buttons */
+.btns{
+    /* border: 1px solid; */
+    width: fit-content;
+    margin: auto;
+    padding: 5px;
+}
+.btns button{
+    padding: 10px;
+    cursor: pointer;
+}

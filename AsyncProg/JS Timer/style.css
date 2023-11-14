@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .timerBody {
+    border: 1px solid;
+    margin: 5px;
+    height: 60vh;
+    background-color: #555;
+    text-align: center;
+  }
+  .timerBody h1{
+      padding: 20px;
+  }
+  /* Set Timer */
+  
+  /* Timer */
+  .setTimer {
+    border: 10px solid;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    cursor: pointer;
+  }
+  .setTimer> div{
+      display: flex;
+      /* border: 1px solid; */
+      padding: 10px;
+      margin-left: 10px;
+  }
+  .timerBody p {
+    font-size: 30px;
+  }
+  .timerBody span {
+    margin-right: 10px;
+  }
+  
+  .btns {
+    margin-top: 50px;
+    padding: 20px;
+  }
+  .btns button {
+    padding: 10px;
+    cursor:pointer;
+    border: none;
+  }

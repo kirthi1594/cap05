@@ -1,0 +1,14 @@
+#container{
+    border: 1px solid red;
+    /* display: flex; */
+    display: grid;
+    grid-template-columns: repeat(3,500px);
+
+
+}
+
+.card{
+    border:5px solid blue;
+    padding: 5px;
+    margin: 5px;
+}

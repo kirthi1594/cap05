@@ -3,75 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> LEADERBOARD </title>
+    <title>Leader Board</title>
     <style>
-
-#main{
-    width: 30%;
-    height: auto;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-
-}        
-
-#container{
-        width: 30%;
-        height: auto;
-        margin: auto;
-        padding: 50px;
-        display: grid;
-        grid-template-columns: repeat(3,60px);
-        grid-auto-rows: 60px;
-        gap: 10px;
-        box-shadow: 0px 0px 20px -1px #ddd;
-}   
-#container>div {
-           box-shadow:black;
-           padding: 20px;
-           justify-content: center;
-           text-align: center;
-           gap: 10px;
-           font-weight: bold;
-           font-size: 20px;
-           font-family: Arial;
-
- }    
-
- #container>div:nth-child(1){
-    grid-row-start: 1;
-    grid-row-end: 2;
-    grid-column-start: 1;
-    grid-column-end: 5;
-
- }      
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #container{
+            width: 100%;
+            margin: auto;
+        }
+        #minMax{
+            border: 1px solid;
+            display: flex;
+            justify-content: space-between;
+        }
+        .card{
+            border: 1px solid;
+            text-align: center;
+        }
+        .card input{
+            height: 70px;
+            width: 70px;
+            text-align: center;
+        }
+        
+        #score{
+            border: 1px solid;
+            width: 70%;
+            margin: auto;
+            text-align: center;
+            margin-top: 50px;
+            padding: 5px;
+        }
+        #inputScore{
+            border: 1px solid;
+            height: 50px;
+        }
+        #dialPad{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(4, 50px);
+            gap: 5px;
+            margin-top: 5px;
+        }
+        #zero{
+            grid-area: 4/ 2/ 5/ 3;
+        }
+        #enter{
+            padding: 10px;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
-    <div id="main">
-        <input type="number" name="mini" id="mini" placeholder="43">
-        <Label for="mini">MIN</Label>
-        <input type="number" name="max" id="max" placeholder="2019">
-        <Label for="max">MAX</Label>
-        <Label for="container">SCORE</Label>
-        <div id="container">
-        
-            <div>#</div>
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
-            <div>4</div>
-            <div>5</div>
-            <div>6</div>
-            <div>7</div>
-            <div>8</div>
-            <div>9</div>
-            <div></div>
-            <div>0</div>
-            <div></div>
-            <div class="black">ENTER/</div>
-    </div>
+    <div id="container">
 
+        <div id="minMax">
+            <div class="card">
+                <input type="number" id="min" value="43">
+                <p>MIN</p>
+            </div>
+            <div class="card">
+                <input type="number" id="max" value="2019">
+                <p>MAX</p>
+            </div>
+        </div>
+
+        <div id="score">
+            <p>SCORE</p>
+            <div id="inputScore">
+                
+            </div>
+            <div id="dialPad">
+                <button>1</button>
+                <button>2</button>
+                <button>3</button>
+                <button>4</button>
+                <button>5</button>
+                <button>6</button>
+                <button>7</button>
+                <button>8</button>
+                <button>9</button>
+                <button id="zero">0</button>
+            </div>
+            <button id="enter">ENTER</button>
+        </div>
     </div>
 </body>
 </html>
+<script>
+    let keys = document.querySelectorAll('#score > #dialPad > button');
+    let enterBtn = document.getElementById('enter');
+    let max = document.getElementById('max').value;
+    let min = document.getElementById('min').value;
+
+    let currScore = '';
+
+    for(let i=0; i<keys.length; i++) {
+        keys[i].addEventListener('click', (event)=> {
+            currScore += event.target.innerText;
+            console.log('currScore', currScore)
+            document.getElementById('inputScore').innerText = currScore;
+        })
+    }
+    
+    enterBtn.addEventListener('click', ()=> {
+        console.log('pressed')
+        if(+currScore>+max) {
+            document.getElementById('max').value = currScore;
+            max = currScore;
+            console.log(typeof document.getElementById('max').value, typeof currScore)
+        }
+        
+        if(+currScore<+min) {
+            document.getElementById('min').value = currScore;
+            min = currScore;
+            console.log(typeof document.getElementById('max').value, typeof currScore)
+        }
+        
+    })
+</script>
